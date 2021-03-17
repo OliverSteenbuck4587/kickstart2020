@@ -2,8 +2,9 @@ package roundA
 
 import java.io.BufferedReader
 import java.io.InputStream
+import javax.xml.stream.util.XMLEventAllocator
 
-class Solution {
+class Allocation {
     fun run(inputStream: InputStream) {
         val bufferedInput = inputStream.bufferedReader()
         val howManyProblems = bufferedInput.readLine().toInt()
@@ -44,13 +45,13 @@ data class Problem(val caseNumber: Int, val budget: Int, val housePrices: List<I
 }
 
 fun main(args: Array<String>) {
-    val solution = Solution();
-    //val input = readFileAsLinesUsingGetResourceAsStream("roundA.txt")
-    val input = System.`in`
+    val solution = Allocation();
+    val input = readFileAsLinesUsingGetResourceAsStream("allocation.txt")
+//    val input = System.`in`
     solution.run(input)
 
 }
 
-fun readFileAsLinesUsingGetResourceAsStream(fileName: String) = Solution::class.java.getResourceAsStream(fileName)
+fun readFileAsLinesUsingGetResourceAsStream(fileName: String) = Allocation::class.java.getResourceAsStream(fileName)
 
 
